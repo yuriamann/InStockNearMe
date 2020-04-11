@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="InStockNearMe.Views.Page1">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Enter Desired Search Item"/>
+            <Entry x:Name="MainEntry"/>
+            <Label Text="Enter Desired Distance"/>
+            <Picker x:Name="Distance"
+                    SelectedIndexChanged="Distance_SelectedIndexChanged"/>
+            <Label Text="Enter Desired Quantity"/>
+            <Picker x:Name="Quantity"
+                    SelectedIndexChanged="Quantity_SelectedIndexChanged"/>
+            <Button Clicked="Button_Clicked"
+                    Text="Search"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
