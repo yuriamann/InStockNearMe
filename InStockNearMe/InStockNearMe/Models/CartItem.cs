@@ -2,7 +2,7 @@
 
 namespace InStockNearMe.Models
 {
-    public class Item
+    public class CartItem
     {
         public string Id { get; set; }
         public string Text { get; set; }

@@ -26,7 +26,7 @@ namespace InStockNearMe.Views
         {
             InitializeComponent();
 
-            var item = new Item
+            var item = new CartItem
             {
                 Text = "Item 1",
                 Description = "This is an item description.",
