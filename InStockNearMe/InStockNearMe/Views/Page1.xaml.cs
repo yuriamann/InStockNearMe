@@ -32,8 +32,8 @@ namespace InStockNearMe.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         { 
-            await ProductAPIManager.SendRequest(itemNames, null, distancehehe, storeshehe, new Location(addy.Text, zipcode.Text));
-
+            await ProductAPIManager.SendRequest(itemNames, null, distancehehe, new List<string> { "walgreens", "walmart" }, new Location(addy.Text, zipcode.Text));
+             // add "wholefoods" 
             await Navigation.PushAsync(new FinalizedListPage());
         }
 

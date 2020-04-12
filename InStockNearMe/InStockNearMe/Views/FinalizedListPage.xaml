@@ -26,19 +26,18 @@
                                             LineBreakMode="NoWrap" 
                                             Style="{DynamicResource ListItemTextStyle}" 
                                             FontSize="16" />
-                                            <!--<CollectionView ItemsSource="{Binding ItemsByQuery}">
+                                            <CollectionView ItemsSource="{Binding ItemsList}">
                                                 <CollectionView.ItemTemplate>
                                                     <DataTemplate>
                                                         <StackLayout Padding="10">
-                                                            <Label Text="{Binding Key}" 
-                                                            d:Text="{Binding .}"
+                                                            <Label Text="{Binding ItemName}"                                               
                                                             LineBreakMode="NoWrap" 
                                                             Style="{DynamicResource ListItemTextStyle}" 
                                                             FontSize="16" />
                                                         </StackLayout>
                                                     </DataTemplate>
-                                                </CollectionView.ItemTemplate> 
-                                            </CollectionView> -->
+                                                </CollectionView.ItemTemplate>
+                                            </CollectionView> 
                                         </StackLayout>
                                     </DataTemplate>
                                 </CollectionView.ItemTemplate>

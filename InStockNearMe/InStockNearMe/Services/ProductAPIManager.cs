@@ -38,7 +38,7 @@ namespace InStockNearMe.Services
             if (response.IsSuccessStatusCode)
             { 
                 var responseString = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(responseString);
+                //Console.WriteLine(responseString);     
                 var retVal = JsonConvert.DeserializeObject<List<Cart>>(responseString);
                 //var retVal = JsonNet.Deserialize<List<Cart>>(responseString);
                 DataManager.S.setResults(retVal);

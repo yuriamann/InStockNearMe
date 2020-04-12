@@ -26,7 +26,7 @@ namespace InStockNearMe.Models
 
     public class ItemAvailability
     {
-        [JsonProperty("quantity")] public int Quantity { get; set; }
+        [JsonProperty("quantity")] public int? Quantity { get; set; }
         [JsonProperty("priceLower")] public string PriceLower { get; set; }
         [JsonProperty("priceUpper")] public string PriceUpper { get; set; }
     }
@@ -71,7 +71,15 @@ namespace InStockNearMe.Models
         [JsonProperty("metadata")] public Dictionary<string, object> Metadata { set; get; }
         [JsonProperty("services")] public List<string> Services { set; get; }
         [JsonProperty("phone")] public string Phone { set; get; }
-        [JsonProperty("items")] public Dictionary<string, List<Item>> ItemsByQuery { get; set; }
+        [JsonProperty("items")] public List<Tuple<string, List<Item>>> Items { get; set; }
+
+        public List<Item> ItemsList{ get; set; } 
+
+        public Store()
+        {
+            ItemsList = new List<Item>(); 
+        }
+
     }
 
     public class SearchQuery

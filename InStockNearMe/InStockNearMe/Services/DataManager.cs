@@ -25,7 +25,7 @@ namespace InStockNearMe.Services
 
         public void setResults(List<Cart> newList)
         {
-            searchResults = new ObservableCollection<Cart>(newList);
+            searchResults = new ObservableCollection<Cart>(newList);          
             printResults(); 
         }
 
@@ -54,13 +54,21 @@ namespace InStockNearMe.Services
             Console.WriteLine("\n");
             for (int i = 0; i < searchResults.Count; i++)
             {
-                Console.WriteLine("Chain: " + searchResults[i].StoreChain);
-                Console.WriteLine("Num Stores: " + searchResults[i].Stores.Length); 
+                //Console.WriteLine("Chain: " + searchResults[i].StoreChain);
+                //Console.WriteLine("Num Stores: " + searchResults[i].Stores.Length); 
                 //Console.WriteLine("Num Stores: " + searchResults[i].Stores.Length);
                 for (int j = 0; j < searchResults[i].Stores.Length; j++)
                 {                   
-                    Console.WriteLine(searchResults[i].Stores[j].Address);
-                    //Console.WriteLine(searchResults[i].Stores[j].ItemsByQuery.Keys.Count);
+                    //Console.WriteLine(searchResults[i].Stores[j].Address);
+                    foreach (var itemList in searchResults[i].Stores[j].Items)
+                    {
+                        foreach (var item in itemList.Item2)
+                        {
+                            //Console.WriteLine(item.ItemName); 
+                            searchResults[i].Stores[j].ItemsList.Add(item); 
+                        }
+                        
+                    }
                     //Console.WriteLine(searchResults[i].Stores[j].Metadata.Keys.Count);
                     //Console.WriteLine("Num items: " + searchResults[i].Stores[j].Items.Count);
                     //foreach (var item in searchResults[i].Stores[j].Items)
