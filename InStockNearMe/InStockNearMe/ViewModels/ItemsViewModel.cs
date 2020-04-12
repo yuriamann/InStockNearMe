@@ -17,7 +17,7 @@ namespace InStockNearMe.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Shopping Cart";
             Items = new ObservableCollection<CartItem>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

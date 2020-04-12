@@ -23,9 +23,9 @@ namespace InStockNearMe.Views
 
             Item = new CartItem
             {
-                Text = "Item name",
-                Description = "This is an item description.",
-                Price = "Total Price Is: "
+                Text = "",
+                Quantity = "",
+                //Price = "Total Price Is: "
             };
 
             BindingContext = this;
