@@ -19,9 +19,9 @@ namespace InStockNearMe.Models
         [JsonProperty("hotness")] public int Hotness { get; set; }
         [JsonProperty("itemUrl")] public string ItemUrl { get; set; }
         [JsonProperty("itemAvailabilities")] public List<ItemAvailability> ItemAvailabilities { get; set; }
-        [JsonProperty("metadata")] public object Metadata { get; set; }
         [JsonProperty("averageRating")] public string AverageRating { get; set; }
         [JsonProperty("availableOnline")] public bool AvailableOnline { get; set; }
+        [JsonProperty("imageUrl")] public string ImageUrl { get; set; }
     }
 
     public class ItemAvailability

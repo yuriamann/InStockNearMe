@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+//using Json.Net; 
+
 using System.Linq;
 using System.Collections.ObjectModel;
 using Xamarin.Essentials;
@@ -26,23 +28,24 @@ namespace InStockNearMe.Services
             location, DeviceInfo.DeviceType.ToString());
 
             var JSONreq = JsonConvert.SerializeObject(query);
+            //var JSONreq = JsonNet.Serialize(query); 
+            
             // Console.WriteLine(JSONreq);
 
             var response = await client.PostAsync(url, new StringContent(JSONreq, Encoding.UTF8, "application/json"));
             //Console.WriteLine(response); 
 
             if (response.IsSuccessStatusCode)
-            {
-                Console.WriteLine("SUCCESS"); 
+            { 
                 var responseString = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(responseString);
                 var retVal = JsonConvert.DeserializeObject<List<Cart>>(responseString);
+                //var retVal = JsonNet.Deserialize<List<Cart>>(responseString);
                 DataManager.S.setResults(retVal);
                 return true; 
             }
             else
-            {
-                Console.WriteLine("NOT SUCCESS"); 
+            {               
                 Console.WriteLine(response.StatusCode);
                 Console.WriteLine(response);
                 return false; 
