@@ -33,6 +33,7 @@ namespace InStockNearMe.Services
 
             if (response.IsSuccessStatusCode)
             {
+                Console.WriteLine("SUCCESS"); 
                 var responseString = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(responseString);
                 var retVal = JsonConvert.DeserializeObject<List<Cart>>(responseString);
@@ -41,6 +42,7 @@ namespace InStockNearMe.Services
             }
             else
             {
+                Console.WriteLine("NOT SUCCESS"); 
                 Console.WriteLine(response.StatusCode);
                 Console.WriteLine(response);
                 return false; 

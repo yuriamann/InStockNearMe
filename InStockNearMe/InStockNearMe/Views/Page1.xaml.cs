@@ -51,7 +51,7 @@ namespace InStockNearMe.Views
 
         private void Stores_SelectedIndexChanged(object sender, EventArgs e)
         {
-            storeshehe = new List<String>() { Stores.Items[Stores.SelectedIndex] };
+            storeshehe = new List<String>() { Stores.Items[Stores.SelectedIndex].ToLower() };
         }
     }
 }
