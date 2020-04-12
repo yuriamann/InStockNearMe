@@ -5,12 +5,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="InStockNearMe.Views.Page2">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Seach Results" />
-            <Button Clicked="Button_Clicked"
-                    Text="Add To Cart"/>
 
-        </StackLayout>
-    </ContentPage.Content>
+    
 </ContentPage>

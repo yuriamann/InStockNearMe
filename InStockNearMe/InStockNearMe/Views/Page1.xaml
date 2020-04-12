@@ -11,15 +11,45 @@
             <Label Text="Max Distance (miles)"/>
             <Picker x:Name="Distance"
                     SelectedIndexChanged="Distance_SelectedIndexChanged"/>
-            <Label Text="Stores "/>
-            <Picker x:Name="Stores"
-                    SelectedIndexChanged="Stores_SelectedIndexChanged"/>
             <Label Text="Enter Address"/>
             <Entry x:Name="addy"/>
             <Label Text="Enter Zip Code"/>
             <Entry x:Name="zipcode"/>
+            <Label Text="Select Stores"/>
+ 
+            <CheckBox x:Name="checkBoxWalmart" />
+            <Label Text="Walmart">
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label"
+                     Binding="{Binding Source={x:Reference checkBox}, Path=IsChecked}"
+                     Value="true">
+                        <Setter Property="FontAttributes"
+                    Value="Italic" />
+                        <Setter Property="FontSize"
+                    Value="Large" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+
+            <CheckBox x:Name="checkBox" />
+            <Label Text="Walgreens">
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label"
+                     Binding="{Binding Source={x:Reference checkBox}, Path=IsChecked}"
+                     Value="true">
+                        <Setter Property="FontAttributes"
+                    Value="Italic, Bold" />
+                        <Setter Property="FontSize"
+                    Value="Large" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+
+
             <Button Clicked="Button_Clicked"
                     Text="Search"/>
+            
         </StackLayout>
+ 
     </ContentPage.Content>
 </ContentPage>

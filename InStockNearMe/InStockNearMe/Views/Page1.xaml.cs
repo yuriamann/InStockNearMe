@@ -27,9 +27,6 @@ namespace InStockNearMe.Views
             Distance.Items.Add("15");
             Distance.Items.Add("20");
 
-            Stores.Items.Add("Walmart");
-            Stores.Items.Add("Walgreens");
-
             itemNames = newItemNames; 
 
         }
@@ -49,9 +46,5 @@ namespace InStockNearMe.Views
 
         }
 
-        private void Stores_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            storeshehe = new List<String>() { Stores.Items[Stores.SelectedIndex].ToLower() };
-        }
     }
 }
