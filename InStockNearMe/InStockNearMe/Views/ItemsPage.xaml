@@ -8,6 +8,7 @@
              Title="{Binding Title}"
              x:Name="BrowseItemsPage">
 
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
         <ToolbarItem Text="Finalize" Clicked="ToolbarItem_Clicked"/>
