@@ -19,7 +19,7 @@ namespace InStockNearMe.Views
 
         async private void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage())); //add the selected item to the shopping cart
+            await Navigation.PushModalAsync(new NavigationPage(new FinalizedListPage())); //add the selected item to the shopping cart
         }
     }
 }
