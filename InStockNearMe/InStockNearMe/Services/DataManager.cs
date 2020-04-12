@@ -23,6 +23,11 @@ namespace InStockNearMe.Services
             searchResults = new ObservableCollection<Cart>();
         }
 
+        public void setResults(List<Cart> newList)
+        {
+            searchResults = new ObservableCollection<Cart>(newList); 
+        }
+
         public void addToResults(List<Cart> newList)
         {
             foreach (Cart newChain in newList)

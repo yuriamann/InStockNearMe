@@ -19,7 +19,7 @@ namespace InStockNearMe.Services
         static HttpClient client = new HttpClient();
         private static string url = "http://a83d595b.ngrok.io/search";
 
-        public async static void SendRequest(string product, string brand, float maxDistance, List<string> stores, Models.Location location)
+        public async static Task<bool> SendRequest(string product, string brand, float maxDistance, List<string> stores, Models.Location location)
         {
             Models.Location here = new Models.Location("2963 S. Law Ave, Boise ID");
             SearchQuery query = new SearchQuery(product, brand, DateTime.Now.Ticks, maxDistance, stores,
@@ -37,12 +37,14 @@ namespace InStockNearMe.Services
                 var responseString = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(responseString);
                 var retVal = JsonConvert.DeserializeObject<List<Cart>>(responseString);
-                DataManager.S.addToResults(retVal);
+                DataManager.S.setResults(retVal);
+                return true; 
             }
             else
             {
                 Console.WriteLine(response.StatusCode);
                 Console.WriteLine(response);
+                return false; 
             }
         }
     }

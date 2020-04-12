@@ -21,6 +21,8 @@ namespace InStockNearMe.Views
     {
         ItemsViewModel viewModel;
 
+        public static int count = 0; 
+
         public ItemsPage()
         {
             InitializeComponent();
@@ -50,11 +52,18 @@ namespace InStockNearMe.Views
 
         async private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-            var listItems = viewModel.DataStore.GetItemsAsync();
+            Console.WriteLine("We Clicked Finalize " + ++count);
             
+            var listItems = await viewModel.DataStore.GetItemsAsync();
+            List<string> itemNames = new List<string>(); 
+            foreach (var item in listItems)
+            {
+                itemNames.Add(item.Text); 
+            }
 
 
-            //ProductAPIManager.SendRequest(string product, null, 20, null, new Location("2963 S. Law Ave. Boise, ID")); 
+            await ProductAPIManager.SendRequest(itemNames[0], null, 20, null, new Location("2963 S. Law Ave. Boise, ID", "83706")); 
+
             await Navigation.PushModalAsync(new NavigationPage(new FinalizedListPage()));
         }
     }

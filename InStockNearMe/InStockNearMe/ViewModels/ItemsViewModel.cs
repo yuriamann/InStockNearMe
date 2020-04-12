@@ -26,6 +26,7 @@ namespace InStockNearMe.ViewModels
                 var newItem = item as CartItem;
                 Items.Add(newItem);
                 await DataStore.AddItemAsync(newItem);
+                MessagingCenter.Unsubscribe<NewItemPage, CartItem>(this, "AddItem"); 
             });
         }
 
