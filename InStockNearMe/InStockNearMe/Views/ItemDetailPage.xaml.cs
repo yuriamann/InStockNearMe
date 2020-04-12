@@ -29,8 +29,8 @@ namespace InStockNearMe.Views
             var item = new CartItem
             {
                 Text = "Item 1",
-                Description = "This is an item description.",
-                Price = "Total Price Is: "
+                Quantity = "Item Quantity.",
+                //Price = "Total Price Is: "
             };
 
             viewModel = new ItemDetailViewModel(item);
