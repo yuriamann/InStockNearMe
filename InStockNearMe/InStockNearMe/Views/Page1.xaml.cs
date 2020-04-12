@@ -31,7 +31,6 @@ namespace InStockNearMe.Views
             Stores.Items.Add("Walgreens");
 
             itemNames = newItemNames; 
-
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -46,7 +45,6 @@ namespace InStockNearMe.Views
             string distance = Distance.Items[Distance.SelectedIndex];
             float.TryParse(distance, out float result);
             distancehehe = result; 
-
         }
 
         private void Stores_SelectedIndexChanged(object sender, EventArgs e)

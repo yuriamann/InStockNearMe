@@ -7,7 +7,6 @@
              x:Class="InStockNearMe.Views.Page1">
     <ContentPage.Content>
         <StackLayout>
-
             <Label Text="Max Distance (miles)"/>
             <Picker x:Name="Distance"
                     SelectedIndexChanged="Distance_SelectedIndexChanged"/>

@@ -7,11 +7,48 @@
              x:Class="InStockNearMe.Views.FinalizedListPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Finalized Shopping List"/>
+            <CollectionView x:Name="ResultsCollectionView"
+                ItemsSource="{Binding SearchResults}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding StoreChain}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                            <CollectionView ItemsSource="{Binding Stores}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout Padding="10">
+                                            <Label Text="{Binding Address}" 
+                                            d:Text="{Binding .}"
+                                            LineBreakMode="NoWrap" 
+                                            Style="{DynamicResource ListItemTextStyle}" 
+                                            FontSize="16" />
+                                            <!--<CollectionView ItemsSource="{Binding ItemsByQuery}">
+                                                <CollectionView.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <StackLayout Padding="10">
+                                                            <Label Text="{Binding Key}" 
+                                                            d:Text="{Binding .}"
+                                                            LineBreakMode="NoWrap" 
+                                                            Style="{DynamicResource ListItemTextStyle}" 
+                                                            FontSize="16" />
+                                                        </StackLayout>
+                                                    </DataTemplate>
+                                                </CollectionView.ItemTemplate> 
+                                            </CollectionView> -->
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
             <Button Text="Send List"
                     Clicked="Button_Clicked"/>
-                    
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
