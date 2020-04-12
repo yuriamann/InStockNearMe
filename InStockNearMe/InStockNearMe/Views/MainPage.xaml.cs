@@ -34,7 +34,7 @@ namespace InStockNearMe.Views
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
                     case (int)MenuItemType.ShoppingCart:
-                        MenuPages.Add(id, new NavigationPage(new Page1()));
+                        MenuPages.Add(id, new NavigationPage(new Page1(null)));
                         break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
