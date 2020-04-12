@@ -59,13 +59,13 @@ namespace InStockNearMe.Services
                 for (int j = 0; j < searchResults[i].Stores.Length; j++)
                 {
                     Console.WriteLine(searchResults[i].Stores[j].Address);
-                    Console.WriteLine("Num items: " + searchResults[i].Stores[j].Items.Count);
-                    foreach (var item in searchResults[i].Stores[j].Items)
-                    {
-                        Console.Write("Name: " + item.ItemName);
-                        Console.Write("Quantity: " + item.ItemAvailabilities[0].Quantity);
-                        Console.Write("Price: " + item.ItemAvailabilities[0].PriceLower);
-                    }
+                    //Console.WriteLine("Num items: " + searchResults[i].Stores[j].Items.Count);
+                    //foreach (var item in searchResults[i].Stores[j].Items)
+                    //{
+                    //    Console.Write("Name: " + item.ItemName);
+                    //    Console.Write("Quantity: " + item.ItemAvailabilities[0].Quantity);
+                    //    Console.Write("Price: " + item.ItemAvailabilities[0].PriceLower);
+                    //}
                 }
                 Console.WriteLine("\n");
             }

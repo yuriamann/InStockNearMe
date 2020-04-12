@@ -71,7 +71,7 @@ namespace InStockNearMe.Models
         [JsonProperty("metadata")] public Dictionary<string, object> Metadata { set; get; }
         [JsonProperty("services")] public List<string> Services { set; get; }
         [JsonProperty("phone")] public string Phone { set; get; }
-        [JsonProperty("items")] public List<Item> Items { get; set; }
+        [JsonProperty("items")] public Dictionary<string, List<Item>> ItemsByQuery { get; set; }
     }
 
     public class SearchQuery
@@ -83,7 +83,7 @@ namespace InStockNearMe.Models
         [JsonProperty("location")] public Location Location { set; get; }
         [JsonProperty("device")] public string Device { set; get; }
 
-        [JsonProperty("query")] public string Query { set; get; }
+        [JsonProperty("queries")] public List<string> Queries { set; get; }
 
         [JsonProperty("options")] public Dictionary<string, object> Options { get; set; }
 
@@ -93,11 +93,11 @@ namespace InStockNearMe.Models
         {
         }
 
-        public SearchQuery(string query, string brand, long time, float maxDistance, List<string> includedStores,
+        public SearchQuery(List<string> queries, string brand, long time, float maxDistance, List<string> includedStores,
             User user,
             Location location, string device, Dictionary<string, object> options = null)
         {
-            Query = query;
+            Queries = queries;
             Brand = brand;
             Time = time;
             MaxDistance = maxDistance;
