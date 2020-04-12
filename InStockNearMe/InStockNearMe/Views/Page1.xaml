@@ -8,14 +8,16 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <Label Text="Enter Desired Search Item"/>
-            <Entry x:Name="MainEntry"/>
-            <Label Text="Enter Desired Distance"/>
+            <Label Text="Max Distance (miles)"/>
             <Picker x:Name="Distance"
                     SelectedIndexChanged="Distance_SelectedIndexChanged"/>
-            <Label Text="Enter Desired Quantity"/>
-            <Picker x:Name="Quantity"
-                    SelectedIndexChanged="Quantity_SelectedIndexChanged"/>
+            <Label Text="Stores "/>
+            <Picker x:Name="Stores"
+                    SelectedIndexChanged="Stores_SelectedIndexChanged"/>
+            <Label Text="Enter Address"/>
+            <Entry x:Name="addy"/>
+            <Label Text="Enter Zip Code"/>
+            <Entry x:Name="zipcode"/>
             <Button Clicked="Button_Clicked"
                     Text="Search"/>
         </StackLayout>

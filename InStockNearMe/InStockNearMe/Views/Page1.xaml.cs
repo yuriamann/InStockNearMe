@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InStockNearMe.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,22 +22,14 @@ namespace InStockNearMe.Views
             Distance.Items.Add("15 Miles");
             Distance.Items.Add("20 Miles");
 
-            Quantity.Items.Add("1");
-            Quantity.Items.Add("2");
-            Quantity.Items.Add("3");
-            Quantity.Items.Add("4");
-            Quantity.Items.Add("5");
-            Quantity.Items.Add("6");
-            Quantity.Items.Add("7");
-            Quantity.Items.Add("8");
-            Quantity.Items.Add("9");
-            Quantity.Items.Add("10");
+            Stores.Items.Add("Walmart");
+            Stores.Items.Add("Walgreens");
 
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Page2());
+            Navigation.PushAsync(new FinalizedListPage());
         }
 
         private void Distance_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,9 +38,9 @@ namespace InStockNearMe.Views
 
         }
 
-        private void Quantity_SelectedIndexChanged(object sender, EventArgs e)
+        private void Stores_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var quantityhehe = Quantity.Items[Quantity.SelectedIndex];
+            var storeshehe = Stores.Items[Stores.SelectedIndex];
         }
     }
 }

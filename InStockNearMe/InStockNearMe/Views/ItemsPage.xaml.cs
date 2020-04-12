@@ -63,7 +63,7 @@ namespace InStockNearMe.Views
 
             await ProductAPIManager.SendRequest(itemNames, null, 20, null, new Location("2963 S. Law Ave. Boise, ID", "83706"));
        
-            await Navigation.PushModalAsync(new NavigationPage(new FinalizedListPage()));
+            await Navigation.PushModalAsync(new NavigationPage(new Page1()));
         }
     }
 }
