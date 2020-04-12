@@ -36,16 +36,19 @@ namespace InStockNearMe.Models
         [JsonProperty("address")] public string Address { set; get; }
         [JsonProperty("latitude")] public decimal? Latitude { set; get; }
         [JsonProperty("longitude")] public decimal? Longitude { set; get; }
+        [JsonProperty("zip")] public string Zip { set; get; }
 
         public Location()
         {
         }
 
-        public Location(string address = null, decimal? latitude = null, decimal? longitude = null)
+        public Location(string address = null, string zip = null, decimal ? latitude = null, decimal? longitude = null)
         {
             Address = address;
+            Zip = zip;
             Latitude = latitude;
             Longitude = longitude;
+            
         }
     }
 

@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using InStockNearMe.Models;
 using InStockNearMe.Views;
 using InStockNearMe.ViewModels;
+using InStockNearMe.Services; 
 
 namespace InStockNearMe.Views
 {
@@ -50,6 +51,11 @@ namespace InStockNearMe.Views
 
         async private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
+            var listItems = viewModel.DataStore.GetItemsAsync();
+            
+
+
+            //ProductAPIManager.SendRequest(string product, null, 20, null, new Location("2963 S. Law Ave. Boise, ID")); 
             await Navigation.PushModalAsync(new NavigationPage(new FinalizedListPage()));
         }
     }
